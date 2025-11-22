@@ -31,8 +31,6 @@ function CreateUser () {
         logInFunction()
     }
 
-    // HOME JSX NOT MOVING TO SIGN UP
-
     function handleSignUp () {
         dispatch(setSignUp())
         navigate('/')
@@ -43,9 +41,9 @@ function CreateUser () {
             <h3 className="text-lg font-bold">Log in to start.</h3>
             <form onSubmit={handleSubmit} className="flex flex-col p-4">
                 <label typeof="text" className="text-start text-sm mb-2">e-mail:</label>
-                <input className="rounded px-7 py-2 bg-stone-100 text-stone-600 outline-0 text-sm w-full" type="email" name="email" placeholder="enter your name" value={inputName} onChange={(e) => setInputName(e.target.value)} onClick={() => setLoginError(false)} />
+                <input className="rounded px-3 py-2 bg-stone-100 text-stone-600 outline-0 text-base w-full" type="email" name="email" placeholder="enter your name" value={inputName} onChange={(e) => setInputName(e.target.value)} onClick={() => setLoginError(false)} />
                 <label typeof="text" className="text-start text-sm mt-1 mb-2">password:</label>
-                <input className="rounded px-7 py-2 bg-stone-100 text-stone-600 outline-0 text-sm w-full mb-3" type="password" name="password" placeholder="password" value={inputPassword} onChange={(e) => setPassword(e.target.value)} onClick={() => setLoginError(false)} />
+                <input className="rounded px-3 py-2 bg-stone-100 text-stone-600 outline-0 text-base w-full mb-3" type="password" name="password" placeholder="password" value={inputPassword} onChange={(e) => setPassword(e.target.value)} onClick={() => setLoginError(false)} />
                 {loginError && <p className="bg-red-600 p-3 text-stone-300 text-xs mb-2 rounded">incorrect e-mail or password.</p>}
                 <Button type={"homeButton"} text={"enter"} onclick={handleSubmit} />
             </form>

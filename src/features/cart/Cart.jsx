@@ -18,7 +18,7 @@ function Cart () {
   console.log(cartItems)
   
   return (
-    <div className="p-6 text-sm">
+    cartItems.length > 0 ? (<div className="p-6 text-sm">
       <ul className="divide-y divide-stone-300">
         {cartItems?.map((items) => <CartItems item={items} key={items.id} />)}
       </ul>
@@ -26,7 +26,10 @@ function Cart () {
         <Button type={"link"} text={"order now"} sendTo={'/order/new'} />
         <Button type={"secondary"} text={"clear cart"} onclick={clearCartFunction} />
       </div>
-    </div>
+    </div>) : (<div className="p-4 space-y-3.5">
+                  <p>your cart is empty.</p>
+                  <Button type={"link"} sendTo={"/menu"} text={"menu"} />
+              </div>)
   )
 }
 
